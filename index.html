@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <title>CSS Text Animation Effects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="page-heading">
+      <p class="eyebrow">PURE CSS · ANIMATION SHOWCASE</p>
+      <h1>CSS Text Animation</h1>
+      <p class="subtitle">Five animated text effects — no JavaScript animation libraries.</p>
+    </header>
+
+    <section class="effects-grid" aria-label="CSS text animation demos">
+      <article class="effect-card">
+        <span class="preview-label">PREVIEW</span>
+        <div class="preview gradient-preview">
+          <h2 class="gradient-flow">Gradient Flow</h2>
+          <p>Animated Gradient Text</p>
+        </div>
+        <div class="code-copy">
+          <h3>Gradient Moving Text</h3>
+          <pre><code>.gradient-text {
+  background: linear-gradient(90deg,
+    #ff6b6b, #feca57, #48dbfb,
+    #a29bfe, #ff6b6b);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 5s linear infinite;
+}
+@keyframes gradientMove {
+  to { background-position: 300% 50%; }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <span class="preview-label">PREVIEW</span>
+        <div class="preview rotate-preview">
+          <h2 class="rotate-in">Rotate In</h2>
+          <p>Rotate + Scale Intro</p>
+        </div>
+        <div class="code-copy">
+          <h3>Rotate In Text</h3>
+          <pre><code>.rotate-in {
+  animation: rotateIn 1.2s ease-out both;
+}
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(.3);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <span class="preview-label">PREVIEW</span>
+        <div class="preview blur-preview">
+          <h2 class="blur-reveal">Blur Reveal</h2>
+          <p>Blur to Clear Text</p>
+        </div>
+        <div class="code-copy">
+          <h3>Blur Reveal</h3>
+          <pre><code>.blur-reveal {
+  animation: blurReveal 2.2s ease-out both;
+}
+@keyframes blurReveal {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <span class="preview-label">PREVIEW</span>
+        <div class="preview neon-preview">
+          <h2 class="neon-flicker">Neon Flicker</h2>
+          <p>Flickering Neon Sign Effect</p>
+        </div>
+        <div class="code-copy">
+          <h3>Flicker Neon Text</h3>
+          <pre><code>.neon-flicker {
+  color: #39ff88;
+  text-shadow:
+    0 0 5px #39ff88,
+    0 0 10px #39ff88,
+    0 0 20px #39ff88,
+    0 0 40px #00ff66;
+  animation: flicker 2s infinite;
+}
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% { opacity: .25; }
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="effect-card">
+        <span class="preview-label">PREVIEW</span>
+        <div class="preview flip-preview">
+          <h2 class="flip-3d">3D Flip</h2>
+          <p>3D Rotating Text</p>
+        </div>
+        <div class="code-copy">
+          <h3>3D Flip Text</h3>
+          <pre><code>.flip-3d {
+  display: inline-block;
+  animation: flip3d 3s infinite;
+  transform-style: preserve-3d;
+}
+@keyframes flip3d {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <span>CSS Text Animation Effects</span>
+      <button id="replay" type="button">Replay animations ↻</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
